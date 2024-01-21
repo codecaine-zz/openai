@@ -1,6 +1,7 @@
 import requests
 from openai import OpenAI
 
+
 client = OpenAI()
 
 response = client.images.generate(
@@ -18,10 +19,10 @@ image_response = requests.get(image_url)
 
 # Check if the request was successful
 if image_response.status_code == 200:
-        # Open a file in write mode and save the image to it
-        with open('image.png', 'wb') as f:
-                f.write(image_response.content)
+    # Open a file in write mode and save the image to it
+    with open('image.png', 'wb') as f:
+        f.write(image_response.content)
 else:
-        print("Failed to download the image")
+    print("Failed to download the image")
 
 print(image_url)
